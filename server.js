@@ -1,14 +1,16 @@
 var port = process.env.PORT || 5678;
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'); //parses the body
 var mongoDB = require('./mongo-database');
 var sqlDB = require('./sql-database');
+var passport = require('passport'); //to create the user
+
 
 app.use( function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5678');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader( 'Access-Control-Allow-Header', 'X-Requested-With, content-type' );
+    res.setHeader('Access-Control-Allow-Header', 'X-Requested-With, content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
