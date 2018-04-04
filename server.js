@@ -4,7 +4,7 @@ var app = express();
 var bodyParser = require('body-parser'); //parses the body
 var mongoDB = require('./mongo-database');
 var sqlDB = require('./sql-database');
-var passport = require('passport'); //to create the user
+var passport = require('passport')(passport); //to create the user
 
 
 app.use( function(req, res, next){

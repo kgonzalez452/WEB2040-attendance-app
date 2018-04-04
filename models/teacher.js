@@ -7,7 +7,11 @@ var adminSchema = mongoose.Schema({
     emailConfirmed: {type: Boolean, default: false},
     emailConfirmationToken: String,
     resetPasswordToken: String,
-    resetPasswordExpires: Number
+    resetPasswordExpires: Number,
+    courses: [{
+        code: String,
+        description: String
+    }]
 });
 
 // generating a hash
